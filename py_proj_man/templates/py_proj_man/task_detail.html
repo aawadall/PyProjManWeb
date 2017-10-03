@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %} {{ task.name }} {% endblock %}
+{% block content %}
+    <div class="card">
+	<h1 class="card">{{ task.name }}</h1>
+	<h3 class="card">{{ task.description | linebreaks}}</h3>
+	<div class="card">{{ task.notes }} </div>
+        <div class="card">
+		{% for prereq in task.prereequisites_set.all %}
+		<div class="card">
+		    <h3 class="card"> {{ prereq.name }}</h3>
+		    <div > {{ task.description|linebreaks }} </div>
+		    <div > {{ task.notes|linebreaks }} </div>
+                </div>
+		{% endfor %}
+	</div>
+	<div> 
+<div>Back To <a href="{% url 'py_proj_man:project' task.project.workspace.id task.project.id %}">Back to Project {{ task.project.name }}</a> 
+</div>
+ </div>
+    </div>
+{% endblock %}

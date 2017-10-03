@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %} {{ workspace.name }} {% endblock %}
+{% block content %}
+	<h1 class="card">Workspace: {{ workspace.name }}</h1>
+	<h3 class="cards">{{ workspace.description | linebreaks}}</h2>
+	<div class="card">
+		Projects in this workspace <br>
+		{% for project in workspace.project_set.all %}
+                <div class="card">
+		<h3><a href="{% url 'py_proj_man:project' workspace.id project.id %}">{{ project.name }}</a>
+		</h3>
+		<div class="card"> {{ project.description|linebreaks }} </div>
+                </div>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %} {{ project.name }} {% endblock %}
+{% block content %}
+    <div class="card">
+	<h1 class="card">{{ project.name }}</h1>
+	<h3 class="card">{{ project.description | linebreaks}}</h3>
+	<div class="card"> Tasks in this Project </div>
+        <div class="card">
+		{% for task in project.task_set.all %}
+		<div class="card">
+		    <h3 class="card"> 
+                         <a href="{% url 'py_proj_man:task' project.workspace.id project.id task.id %}">{{ task.name }}</a>
+                    </h3>
+		    <div > {{ task.description|linebreaks }} </div>
+		    <div > {{ task.notes|linebreaks }} </div>
+                </div>
+		{% endfor %}
+	</div>
+	<div> 
+<a href="{% url 'py_proj_man:workspace' project.workspace.id %}">Back to Workspace {{ project.workspace.name }}</a>
+ </div>
+    </div>
+{% endblock %}
