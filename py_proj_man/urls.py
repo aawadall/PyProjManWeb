@@ -1,6 +1,7 @@
-from django.conf.urls import url 
+"""PyProjMan URL Handler"""
+from django.conf.urls import url
 
-from . import views 
+from . import views
 
 app_name = 'py_proj_man'
 urlpatterns = [
