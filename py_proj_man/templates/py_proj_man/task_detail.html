@@ -1,22 +1,50 @@
 {% extends "layout.html" %}
 {% block title %} {{ task.name }} {% endblock %}
 {% block content %}
-    <div class="card">
+<div class="cards">
 	<h1 class="card">{{ task.name }}</h1>
-	<h3 class="card">{{ task.description | linebreaks}}</h3>
-	<div class="card">{{ task.notes }} </div>
+	<div class="card">{{ task.description | linebreaks}}</div>
+</div>
+<div class="cards">
+	<div class="card">
+		<div class="cards">
+			<div>
+				<h3>Budget</h3>
+				<b>Time</b>
+				{{ task.budget.time }}
+				<b>Money</b>
+				{{ task.budget.cost }} 
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<h3 >Notes</h3>
+		<div>{{ task.notes }} </div>
+	</div>
+</div>
+<div class="cards">
         <div class="card">
+		<h3>Parent Task</h3>
+		<div >
+		    <h3 > {{ parent.name }}</h3>
+		    <div > {{ parent.description|linebreaks }} </div>
+		    <div > {{ parent.notes|linebreaks }} </div>
+                </div>
+	</div>
+        <div class="card">
+		<h3>Prerequisites</h3>
 		{% for prereq in task.prereequisites_set.all %}
 		<div class="card">
 		    <h3 class="card"> {{ prereq.name }}</h3>
-		    <div > {{ task.description|linebreaks }} </div>
-		    <div > {{ task.notes|linebreaks }} </div>
+		    <div > {{ prereq.description|linebreaks }} </div>
+		    <div > {{ prereq.notes|linebreaks }} </div>
                 </div>
 		{% endfor %}
 	</div>
-	<div> 
-<div>Back To <a href="{% url 'py_proj_man:project' task.project.workspace.id task.project.id %}">Back to Project {{ task.project.name }}</a> 
 </div>
- </div>
-    </div>
+<div class="card">
+	<a href="{% url 'py_proj_man:project' task.project.workspace.id task.project.id %}">
+		Back to Project {{ task.project.name }}
+	</a> 
+</div>
 {% endblock %}
