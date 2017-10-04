@@ -1,14 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
-from .models import *
-# Create your views here.
+from .models import Project, Task, Workspace
+"""PyProjMan Views"""
+
 def default(request):
+    """Default view, to fallback to whenever there is nothing to show"""
     # return render(request,'',
     return HttpResponse('Test Page')
 
 def workspace_detail(request, pk):
-    workspace = get_object_or_404(Workspace, pk=pk) 
+    workspace = get_object_or_404(Workspace, pk=pk)
     return render(request, 'py_proj_man/workspace_detail.html', {'workspace':workspace})
 
 def project_detail(request, ws_pk, proj_pk):
@@ -18,3 +20,4 @@ def project_detail(request, ws_pk, proj_pk):
 def task_detail(request, ws_pk, proj_pk, task_pk):
     task = get_object_or_404(Task,  project = proj_pk, pk=task_pk)
     return render(request, 'py_proj_man/task_detail.html', {'task':task})
+
