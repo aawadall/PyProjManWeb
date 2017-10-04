@@ -1,6 +1,6 @@
+"""PyProjMan Administration Module"""
 from django.contrib import admin
 from .models import Workspace, Project, Budget, Task
-"""PyProjMan Administration Module"""
 
 
 class TaskInline(admin.StackedInline):
