@@ -1,0 +1,7 @@
+exclude:
+- /home/migrations/.*
+- /py_proj_man/migrations/.*
+- /website/__init__.py
+component_depth: 1
+languages:
+- python
