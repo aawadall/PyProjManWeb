@@ -4,6 +4,9 @@
 [![codebeat badge](https://codebeat.co/badges/1563e091-cc62-41f3-bba6-f1319bd4d4fc)](https://codebeat.co/projects/github-com-aawadall-pyprojmanweb-master)
 [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjManWeb/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjManWeb)
 [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjManWeb/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjManWeb)
+[![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjManWeb?branch=master)](https://bettercodehub.com/)
+
+
 An attempt to redesign PyProjMan, building it on top of Django instead of re-inventing the wheel
 
 This time, live version of the project is available on [Google Cloud Platform](http://35.202.75.108/projects/1/)
