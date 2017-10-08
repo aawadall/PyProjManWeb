@@ -8,12 +8,17 @@
 <div class="cards">
 	<div class="card">
 		<div class="cards">
-			<div>
+
 				<h3>Budget</h3>
-				<b>Time</b>
-				{{ task.budget.time }}
-				<b>Money</b>
-				{{ task.budget.cost }} 
+			<div class="card-copy">
+				<div class="card-copy">
+					<b>Time</b>
+					{{ task.budget.time }}
+				</div>
+				<div class="card-copy">
+					<b>Money</b>
+					{{ task.budget.cost }}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -25,11 +30,11 @@
 <div class="cards">
         <div class="card">
 		<h3>Parent Task</h3>
-		<div >
+		<div class="card-copy">
 		    <h3 > {{ parent.name }}</h3>
 		    <div > {{ parent.description|linebreaks }} </div>
 		    <div > {{ parent.notes|linebreaks }} </div>
-                </div>
+		</div>
 	</div>
         <div class="card">
 		<h3>Prerequisites</h3>
