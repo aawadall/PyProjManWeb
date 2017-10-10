@@ -6,6 +6,7 @@
 [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjManWeb/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjManWeb)
 [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjManWeb?branch=master)](https://bettercodehub.com/)
 
+[![](https://codescene.io/projects/1717/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1717/jobs/latest-successful/results)
 
 An attempt to redesign PyProjMan, building it on top of Django instead of re-inventing the wheel
 
