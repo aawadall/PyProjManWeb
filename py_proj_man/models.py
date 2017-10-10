@@ -8,7 +8,7 @@ class Workspace(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     def __str__(self):
-        return self.name 
+        return self.name
 
 
 class Budget(models.Model):
@@ -21,6 +21,7 @@ class Budget(models.Model):
 class Project(models.Model):
     """Self contained project"""
     id = models.IntegerField(primary_key=True, editable=False)
+    uid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
     description = models.TextField()
     baseline = models.DateTimeField(null=True, blank=True)
@@ -33,6 +34,7 @@ class Project(models.Model):
 class Task(models.Model):
     """Task"""
     id = models.AutoField(primary_key=True)
+    uid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
