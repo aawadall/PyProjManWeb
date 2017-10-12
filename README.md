@@ -10,4 +10,4 @@
 
 An attempt to redesign PyProjMan, building it on top of Django instead of re-inventing the wheel
 
-This time, live version of the project is available on [Google Cloud Platform](http://35.202.75.108/projects/1/)
+
